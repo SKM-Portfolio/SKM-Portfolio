@@ -7,6 +7,7 @@ This project is a simple ATM management system with a client-server architecture
 - `client/`: Contains the client-side GUI application.
 - `server/`: Contains the server-side logic and API.
 - `database/`: Contains the database setup and migration scripts.
+- `run.py`: A script to easily run the application.
 
 ## Getting Started
 
@@ -14,15 +15,9 @@ This project is a simple ATM management system with a client-server architecture
    ```bash
    pip install -r requirements.txt
    ```
-2. **Initialize the database**:
+2. **Run the application**:
    ```bash
-   python database/database.py
+   python run.py
    ```
-3. **Run the server**:
-   ```bash
-   python server/main.py
-   ```
-4. **Run the client**:
-   ```bash
-   python client/main.py
-   ```
+
+This will initialize the database, start the server in the background, and open the client GUI.

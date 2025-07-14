@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog
 import requests
+import sys
 
 API_URL = "http://127.0.0.1:5000"
 
@@ -69,6 +70,18 @@ class ATMClient(tk.Tk):
                 })
                 messagebox.showinfo("Withdraw", response.json().get('message') or response.json().get('error'))
 
+def test_create_account():
+    """Tests the create_account endpoint."""
+    response = requests.post(f"{API_URL}/account", json={"account_number": "12345", "pin": "1234"})
+    if response.status_code == 201:
+        print("Test create_account: PASSED")
+    else:
+        print(f"Test create_account: FAILED ({response.json()})")
+
+
 if __name__ == "__main__":
-    app = ATMClient()
-    app.mainloop()
+    if len(sys.argv) > 1 and sys.argv[1] == 'test':
+        test_create_account()
+    else:
+        app = ATMClient()
+        app.mainloop()
