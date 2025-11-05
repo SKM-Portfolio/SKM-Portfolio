@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Databases
+*.db
+*.sqlite3
+
+# Other
+.DS_Store
